@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap");
+      :root {
+        --AlmostWhite: hsl(0, 0%, 98%);
+        --MediumGray: hsl(0, 0%, 41%);
+        --AlmostBlack: hsl(0, 0%, 8%);
+      }
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      body {
+        margin: 0em 0.5em;
+        padding: 0;
+        font-size: 18px;
+        height: 100vh;
+        font-family: "Epilogue", sans-serif;
+        background-color: var(--AlmostWhite);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        padding: 0.5em 2em;
+        font-size: smaller;
+        color: var(--MediumGray);
+        transform: translate(60px, 0px);
+      "
+      class="header"
+    >
+      <div style="display: flex; align-items: center">
+        <img src="./images/logo.svg" alt="logo" />
+        <ul style="list-style: none; display: flex; gap: 1em">
+          <li style="position: relative">
+            <button
+              id="btnone"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.4em;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: 'Epilogue', sans-serif;
+              "
+            >
+              Features
+              <img src="/images/icon-arrow-down.svg" alt="" />
+            </button>
+            <div
+              id="dropone"
+              style="
+                display: block;
+                position: fixed;
+                width: 7em;
+                height: auto;
+                background-color: white;
+                margin-top: 0.8em;
+                padding: 1em 0.8em;
+                border-radius: 10px;
+                z-index: 1000;
+                transform: translate(-20%, 0%);
+                display: none;
+              "
+            >
+              <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.5em;
+                  padding: 0;
+                "
+              >
+                <li
+                  style="
+                    display: flex;
+                    gap: 0.4em;
+                    align-items: center;
+                    cursor: pointer;
+                  "
+                >
+                  <img src="./images/icon-todo.svg" alt="" />Todo List
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 0.4em;
+                    align-items: center;
+                    cursor: pointer;
+                  "
+                >
+                  <img src="./images/icon-calendar.svg" alt="" />Calendar
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 0.4em;
+                    align-items: center;
+                    cursor: pointer;
+                  "
+                >
+                  <img src="./images/icon-reminders.svg" alt="" />Reminders
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    gap: 0.4em;
+                    align-items: center;
+                    cursor: pointer;
+                  "
+                >
+                  <img src="./images/icon-planning.svg" alt="" />Plannings
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li style="position: relative">
+            <button
+              id="btntwo"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.4em;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: 'Epilogue', sans-serif;
+              "
+            >
+              Company
+              <img src="/images/icon-arrow-down.svg" alt="" />
+            </button>
+            <div
+              id="droptwo"
+              style="
+                display: block;
+                position: fixed;
+                width: 5em;
+                height: auto;
+                background-color: white;
+                margin-top: 0.8em;
+                padding: 1em 0.8em;
+                border-radius: 10px;
+                z-index: 1000;
+                transform: translate(-10%, 0%);
+                display: none;
+              "
+            >
+              <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.5em;
+                  padding: 0;
+                "
+              >
+                <li>History</li>
+                <li>Our Team</li>
+                <li>Blog</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <button
+              style="
+                display: flex;
+                align-items: center;
+
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: 'Epilogue', sans-serif;
+              "
+            >
+              Careers
+            </button>
+          </li>
+          <li>
+            <button
+              style="
+                display: flex;
+                align-items: center;
+
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: 'Epilogue', sans-serif;
+              "
+            >
+              About
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul
+          style="
+            list-style: none;
+            align-items: center;
+            display: flex;
+            gap: 1em;
+            transform: translate(-60px, 0px);
+          "
+        >
+          <li>
+            <button
+              style="
+                display: flex;
+                align-items: center;
+
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-family: 'Epilogue', sans-serif;
+              "
+            >
+              Login
+            </button>
+          </li>
+          <li>
+            <button
+              style="
+                border: 1px solid var(--MediumGray);
+                background-color: transparent;
+                padding: 0.8em 1.5em;
+                border-radius: 10px;
+                cursor: pointer;
+              "
+            >
+              Register
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: space-evenly;
+        width: 80%;
+        height: 80%;
+        align-self: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -45%);
+        z-index: -1;
+      "
+      class="main"
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+        "
+        class="hero"
+      >
+        <div style="font-size: xx-large">
+          <h1 style="margin: 0">Make</h1>
+          <h1 style="margin: 0">remote work</h1>
+        </div>
+        <div
+          style="width: 60%; display: flex; flex-direction: column; gap: 2em"
+        >
+          <p style="color: var(--MediumGray)">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <button
+            style="
+              border: none;
+              background-color: var(--AlmostBlack);
+              color: var(--AlmostWhite);
+              width: 10em;
+              height: 3em;
+              border-radius: 10px;
+
+              font-weight: 700;
+            "
+          >
+            Learn more
+          </button>
+        </div>
+        <div>
+          <ul
+            style="
+              list-style: none;
+              display: flex;
+              gap: 2em;
+              align-items: center;
+              margin: 0em;
+              padding: 0em 0em;
+            "
+          >
+            <li><img src="./images/client-databiz.svg" alt="" /></li>
+            <li><img src="./images/client-audiophile.svg" alt="" /></li>
+            <li><img src="./images/client-meet.svg" alt="" /></li>
+            <li><img src="./images/client-maker.svg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero_img">
+        <picture>
+          <source
+            srcset="./images/image-hero-desktop.png"
+            media="(min-width: 650px)"
+          />
+          <img
+            style="max-height: 100%; object-fit: contain"
+            src="./images/image-hero-mobile.png"
+            alt=""
+          />
+        </picture>
+      </div>
+    </div>
+    <!-- Features
+  Company
+  Careers
+  About
+
+  Login
+  Register
+
+  Make remote work
+
+  Get your team in sync, no matter your location. Streamline processes, 
+  create team rituals, and watch productivity soar.
+
+  Learn more -->
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/Faycal88">MERABET Faycal</a>.
+    </div>
+    <script>
+      var btnone = document.getElementById("btnone");
+      var dropOne = document.getElementById("dropone");
+      var btntwo = document.getElementById("btntwo");
+      var droptwo = document.getElementById("droptwo");
+      btnone.addEventListener("click", (e) => {
+        switch (dropOne.style.display) {
+          case "block":
+            dropOne.style.display = "none";
+            break;
+          case "none":
+            dropOne.style.display = "block";
+          default:
+            break;
+        }
+      });
+      btntwo.addEventListener("click", (e) => {
+        switch (droptwo.style.display) {
+          case "block":
+            droptwo.style.display = "none";
+            break;
+          case "none":
+            droptwo.style.display = "block";
+          default:
+            break;
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (e.path[0].id === "btnone" || e.path[0].id === "btntwo") {
+          return;
+        } else {
+          droptwo.style.display = "none";
+          dropOne.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
